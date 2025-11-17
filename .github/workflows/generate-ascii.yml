@@ -1,8 +1,6 @@
 name: Generate ASCII Artwork
 
-on:
-  push:
-  workflow_dispatch:    # optional: lets you run this manually from Actions UI
+on:push
 
 jobs:
   ascii_job:
@@ -14,7 +12,10 @@ jobs:
 
       - name: List repo files
         run: ls -ltr
-      
+     
       - name: executing shell script
-        run: ./ascii-scripts.sh
+        run: 
+          chmod +x ascii-scripts.sh
+          ./ascii-scripts.sh
+
        
